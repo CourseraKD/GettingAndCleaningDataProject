@@ -1,21 +1,12 @@
----
-title: "Codebook"
-author: "Kevan Doyle"
-date: 2015-08-16
-output: html_document
----
+#Codebook#
 
-Since the main elements of a codebook were simply described in the project assignment documentaion as 'describes the variables, the data, and any transforamtions or work that you performed to clean up the data', I sought out more detail. The contents below are loosely based on the [ICPSR](http://www.icpsr.umich.edu/icpsrweb/landing.jsp) (Inter-university Consortium for Political and Social Research) description of '[What is a codebook](http://www.icpsr.umich.edu/icpsrweb/ICPSR/support/faqs/2006/01/what-is-codebook)'.
-
----
-
-#Summary#
+##Summary##
 
 This Codebook is a description of the variables, the data, and transformations to clean up and make tidy the data presented in [Human Activity Recognition Using Smartphones Dataset](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) from UCI (UCI stands for [University of California at Irvine](http://www.ics.uci.edu/))
 
 ---
 
-#Background#
+##Background##
 
 The abstract for the data is: Abstract: Human Activity Recognition **database** built from the recordings of 30 **subjects** performing **activities** of daily living (ADL) while carrying a waist-mounted smartphone with embedded **inertial sensors**. 
 
@@ -25,15 +16,15 @@ The [data](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20
 
 ---
 
-#Variables#
+##Variables##
 
 ---
 
-#Data#
+##Data##
 
 The UCI data is broken into two sets of data, one used for training and one used for testing [training refers to the development of models that describe relations bewteen the data variables and the models would then be validated with the test data set; the UCI data does not include models]. 
 
-Data Sets:
+###Data Sets###
 
 * train (in folder train)
 * test (in folder test)
@@ -85,9 +76,3 @@ For each data set (train and test), the files for the raw measurements line up a
     |     7352 rows       |  7352 rows  |     7352 rows     |        7352 rows      |
     |-------------------------------------------------------------------------------|
 
-
----
-
-#Transformations#
-
----
