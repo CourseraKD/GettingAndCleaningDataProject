@@ -1,10 +1,6 @@
----
-title: "Coursera - Getting and Cleaning Data Class Project"
-author: "CourseraKD"
-date: "2015-08-23"
----
+#Coursera - Getting and Cleaning Data Class Project#
 
-#Summary#
+##Summary##
 This README file is a description of the work done in fulfillment of the class project for the online Coursera - Getting and Cleaning Data class. It describes how the scripts used to produce the required output work and how they are connected.
 
 This README file assumes you have read the associated Codebook.
@@ -13,12 +9,12 @@ This README file assumes you have read the associated Codebook.
 * the tidy data set generated from that data
 * the code used to generate the tidy data set
     
-#Background#
+##Background##
 The abstract for the data is: Abstract: Human Activity Recognition database built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors. No mention in either the abstract or the data description 
     
 The [data](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip ) were taken from the [Coursera](https://www.coursera.org/) site for the class [Getting and Cleaning data](https://www.coursera.org/course/getdata), part of their [Data Science Specialization](https://www.coursera.org/specialization/jhudatascience/1).
 
-#Coursera Project Deliverables#
+##Coursera Project Deliverables##
 * a codebook that describes the variables, the data and any transformations or work performed to clean up the data
 * a README.md in the repo with your scripts. This repo explains how all of the scripts work and how they are connected. [NOTE: this is a confusing instruction. I interpret it to mean we need a README.md file that explains how the single required script, run_analysis.R, works]
 * a link to a Github repository containing the R script, run_analysis.R, that generates the tidy dataset
@@ -29,7 +25,7 @@ The [data](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20
     * appropriately labels the data set with descriptive names
     * creates a second, independent tidy data set with the average of each variable for each activity and each subject
 
-#Data Preparation#
+##Data Preparation##
 [NOTE: the script run_analysis.R requires package 'dplyr' to be installed. The script checks that the package is available and if not, issues a message and stops execution.]
 
 The script run_analysis.R is self-documenting, that is, it contains comments (which print out during execution) that describe what is going on in each portion of the code. Here is a list of the sections of code:
@@ -55,10 +51,10 @@ The script run_analysis.R is self-documenting, that is, it contains comments (wh
 
 [NOTE: there is a section which reads in data from the files in the directores Inertial Signals directories, but since that data is not needed to complete the project requirements, it is not run.]
 
-# DataTransformations#
+## DataTransformations##
 As described in Codebook.md, the data existed in files that were separate from the activity and subject identifiers (row identifiers) and from the labels for the variables (column names, residing in file features.txt). The bulk of the script was reading in all the files, converting to factors where needed, subsetting and naming the columns so that only mean and standard deviation columns were preserved and then merging the measurement data with the activity and subjectids for each row. Finally, the resulting table was aggregated to provide column means for each activity-subject combination (using package dplyr). 
 
-#Comments and Complaints#
+##Comments and Complaints##
 This section of the codebook is not related to completion of the project. It is a list of observations and value judgements about the data we had to work with.
 Granted the purpose of the course is to have us learn how to work with messy, real world data. But it is worthwhile to catalog in what ways the data is messy so help identify how to provide tidy data in our own work.
 
@@ -74,7 +70,7 @@ The documentation that came with the data for this project (I'm here referring t
         * Y_test was the file of indexes back to the activity labels. The labels described the activity (walking, walking upstairs, etc.) each of which had an index (1 through 6). The Y_test file was a list of indexes that lined up with the 2947 raw measurements in the Inertial Signal files and the 2947 values ('features') derived from the raw measurements. Lining up the rows in the Y_test file with those in the Inertial Signals files and the X_test file was how to identify the activity for each data row in the files. Y_test is a name that not only has nothing to indicate what is in the file, it actually confuses the matter with the use of 'Y' which is already in use, along with 'X' and 'Z', to label the axes of motion.
     
     
-*Lessons Learned*
+##Lessons Learned##
     * State the goal or goals of your activities.
     * Name your data files with words that are descriptive of the file contents and how the contents relate to data in other files. 
 
