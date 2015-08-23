@@ -78,7 +78,9 @@ These were obtained by averaging the signals in a signal window sample. These ar
 * tBodyGyroJerkMean
 
 ###Variable Names###
-The variable names are listed in features.txt and are made up of from the lists of values and calculations above. The names are descriptive enough, and there are so many of them, it seems most useful to use the names as they are given in the features.txt file.
+The variable names are listed in features.txt and are made up of from the lists of values and calculations above. 
+
+The names are descriptive enough, and there are so many of them, it seems most useful to use the names as they are given in the features.txt file.
 
 Example: tBodyAcc-max()-Z is the value of the maximum Body Acceleration in the time domain in the Z axis.
 
