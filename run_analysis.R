@@ -58,7 +58,7 @@ srcs <- c("test", "train")
 # --- -------------------------------------------------------
 # --- Get activity names and indexes
 # --- -------------------------------------------------------
-msg <- "A. Getting activity names and indexes"
+msg <- "1. Getting activity names and indexes"
 print.noquote(msg)
 fname <- "./UCI HAR Dataset/activity_labels.txt"
 activities <- read.table(file = fname, sep = " ")
@@ -68,7 +68,7 @@ colnames(activities) <- c("index", "activity")
 # --- -------------------------------------------------------
 # --- Get features and indexes
 # --- -------------------------------------------------------
-msg <- "B. Getting features"
+msg <- "2. Getting features"
 print.noquote(msg)
 fname <- "./UCI HAR Dataset/features.txt"
 features <- read.table(file = fname, sep = " ")
@@ -79,7 +79,7 @@ rm(fname)
 # --- -------------------------------------------------------
 # --- Get features that are means and standard deviations
 # --- -------------------------------------------------------
-msg <- "C. Getting mean and standard deviation features"
+msg <- "3. Getting mean and standard deviation features"
 print.noquote(msg)
 msg <- "   This is needed for step 2 of the project instructions"
 print.noquote(msg)
@@ -96,7 +96,7 @@ rm(pat)
 # --- Get Inertial Signal data
 # --- -------------------------------------------------------
 # As far as I can tell, we don't need the Inertial Signal data.
-# msg <- "D. Getting Inertial Signal data"
+# msg <- "4. Getting Inertial Signal data"
 # print.noquote(msg)
 # signals <- c("body_acc", "body_gyro", "total_acc")
 # axes <- c(rep("x", 3), rep("y", 3), rep("z", 3))
@@ -129,7 +129,7 @@ rm(pat)
 # --- -------------------------------------------------------
 # --- Get activity indexes
 # --- -------------------------------------------------------
-msg <- "E. Getting activity indexes"
+msg <- "4. Getting activity indexes"
 print.noquote(msg)
 fnames <- paste(
     "./UCI HAR Dataset/", srcs, 
@@ -147,7 +147,7 @@ lstActivityIndexes <- lapply(1:2, function(x) {
 # --- -------------------------------------------------------
 # --- Get subject ID data
 # --- -------------------------------------------------------
-msg <- "F. Getting subject ids"
+msg <- "5. Getting subject ids"
 print.noquote(msg)
 fnames <- paste( 
     "./UCI HAR Dataset/", srcs, 
@@ -169,7 +169,7 @@ lstsubjectids[[2]][,1] <- as.factor((lstsubjectids[[2]][,1]))
 # --- Get X data
 # --- -------------------------------------------------------
 if (!exists("lstX_ORIG")) {
-    msg <- "G. Getting X data"
+    msg <- "6. Getting X data"
     print.noquote(msg)
     fnames <- paste(
         "./UCI HAR Dataset/", srcs, 
@@ -186,7 +186,7 @@ if (!exists("lstX_ORIG")) {
     )
     lstX_ORIG <- lstX
 } else {
-    msg <- "G. Already have X data"
+    msg <- "6. Already have X data"
     print.noquote(msg)
     lstX <- lstX_ORIG
 }
@@ -199,7 +199,7 @@ rm(fnames)
 # NOTE: I subset first and then apply column names because some
 #       of the features are repeated: there are 3 features with the same
 #       name for the 'bandsEnergy()' features.
-msg <- "H. Subsetting X data to get only mean and standard deviation columns"
+msg <- "7. Subsetting X data to get only mean and standard deviation columns"
 print.noquote(msg)
 msg <- "    This is step 2 out of 5 of the project instructions"
 print.noquote(msg)
@@ -212,7 +212,7 @@ lstX <- lapply(lstX, function(x) {
 # --- -------------------------------------------------------
 # --- Add column names (features) to X data
 # --- -------------------------------------------------------
-msg <- "I. Adding column names to X data"
+msg <- "8. Adding column names to X data"
 print.noquote(msg)
 msg <- "    This is step 4 out of 5 of the project instructions"
 print.noquote(msg)
@@ -226,7 +226,7 @@ rm(features, features_ms_names, features_ms_rows)
 # --- -------------------------------------------------------
 # --- Add subject IDs column to X data
 # --- -------------------------------------------------------
-msg <- "J. Adding subject id column to X data (needed for step 5)"
+msg <- "9. Adding subject id column to X data (needed for step 5)"
 print.noquote(msg)
 addcols <- function(x, y, xname) {
     dfnew <- cbind(x, y)
@@ -241,7 +241,7 @@ rm(lstsubjectids)
 # --- -------------------------------------------------------
 # --- Add activity names column to X data
 # --- -------------------------------------------------------
-msg <- "K. Adding activity name column to X data"
+msg <- "10. Adding activity name column to X data"
 print.noquote(msg)
 msg <- "    This is step 3 out of 5 of the project instructions"
 print.noquote(msg)
@@ -269,7 +269,7 @@ rm(srcs, activities, lstActivityIndexes, addcols, lstact)
 # --- -------------------------------------------------------
 # --- Concatenate the train and test tables
 # --- -------------------------------------------------------
-msg <- "L. Merging the two data sets"
+msg <- "11. Merging the two data sets"
 print.noquote(msg)
 msg <- "    This is step 1 out of 5 of the project instructions"
 print.noquote(msg)
@@ -280,7 +280,7 @@ rm(lstX)
 # --- -------------------------------------------------------
 # --- Generate 2nd tidy data set with averages
 # --- -------------------------------------------------------
-msg <- "M. Generating 2nd tidy data set with averages by activity and subject"
+msg <- "12. Generating 2nd tidy data set with averages by activity and subject"
 print.noquote(msg)
 msg <- "    This is step 1 out of 5 of the project instructions"
 print.noquote(msg)

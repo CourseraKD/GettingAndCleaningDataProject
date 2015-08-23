@@ -31,28 +31,29 @@ The [data](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20
 
 #Data Preparation#
 [NOTE: the script run_analysis.R requires package 'dplyr' to be installed. The script checks that the package is available and if not, issues a message and stops execution.]
-The script run_analysis.R is self-documenting, that is, it contains comments (which print out during execution) that describe what is going on in each portion of the code. Here is a list of the sections of code:
-A. Getting activity names and indexes
-B. Getting features
-C. Getting mean and standard deviation features
-    This is needed for step 2 of the project instructions
-E. Getting activity indexes
-F. Getting subject ids
-G. Already have X data
-H. Subsetting X data to get only mean and standard deviation columns
-    This is step 2 out of 5 of the project instructions
-I. Adding column names to X data
-    This is step 4 out of 5 of the project instructions
-J. Adding subject id column to X data (needed for step 5)
-K. Adding activity name column to X data
-    This is step 3 out of 5 of the project instructions
-L. Merging the two data sets
-    This is step 1 out of 5 of the project instructions
-M. Generating 2nd tidy data set with averages by activity and subject
-    This is step 1 out of 5 of the project instructions
-N. Saving data tables in .RData and .txt format
 
-[NOTE: there is a section D which reads in data from the files in the directores Inertial Signals directories, but since that data is not needed to complete the project requirements, it is not run.]
+The script run_analysis.R is self-documenting, that is, it contains comments (which print out during execution) that describe what is going on in each portion of the code. Here is a list of the sections of code:
+
+1. Getting activity names and indexes
+2. Getting features
+3. Getting mean and standard deviation features
+    This is needed for step 2 of the project instructions
+4. Getting activity indexes
+5. Getting subject ids
+6. Already have X data
+7. Subsetting X data to get only mean and standard deviation columns
+    This is step 2 out of 5 of the project instructions
+8. Adding column names to X data
+    This is step 4 out of 5 of the project instructions
+9. Adding subject id column to X data (needed for step 5)
+10. Adding activity name column to X data
+    This is step 3 out of 5 of the project instructions
+11. Merging the two data sets
+    This is step 1 out of 5 of the project instructions
+12. Generating 2nd tidy data set with averages by activity and subject
+    This is step 1 out of 5 of the project instructions
+
+[NOTE: there is a section which reads in data from the files in the directores Inertial Signals directories, but since that data is not needed to complete the project requirements, it is not run.]
 
 # DataTransformations#
 As described in Codebook.md, the data existed in files that were separate from the activity and subject identifiers (row identifiers) and from the labels for the variables (column names, residing in file features.txt). The bulk of the script was reading in all the files, converting to factors where needed, subsetting and naming the columns so that only mean and standard deviation columns were preserved and then merging the measurement data with the activity and subjectids for each row. Finally, the resulting table was aggregated to provide column means for each activity-subject combination (using package dplyr). 
