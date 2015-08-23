@@ -17,7 +17,7 @@ The [data](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20
 ---
 
 ##Variables##
-The variables are defined in the file features_info.txt. They are **summary values** of the raw data located in the Inertial Signals folders (see section Data Sets below for a longer description of the raw data values), consisting of acclerometer (**accel**) and gyroscope (**gyro**) measurements for 3 axes (X, Y, Z) taken from mobile phones attached to **subjects** that engaged in a variety of activities for a certain amount of time. 
+The variables are defined in the file features_info.txt and their names are listed in the features.txt file. They are **summary values** of the raw data located in the Inertial Signals folders (see section Data Sets below for a longer description of the raw data values), consisting of acclerometer (**accel**) and gyroscope (**gyro**) measurements for 3 axes (X, Y, Z) taken from mobile phones attached to **subjects** that engaged in a variety of activities for a certain amount of time. 
 
 The acceleration signal was separated into **body** and **gravity** acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.
 
@@ -49,7 +49,7 @@ These signals were used to estimate variables of the feature vector for each pat
 * fBodyGyroMag
 * fBodyGyroJerkMag
 
-###List of Variables calculated from the derived values###
+###List of values calculated from the derived values###
 * mean(): Mean value
 * std(): Standard deviation
 * mad(): Median absolute deviation 
@@ -67,6 +67,20 @@ These signals were used to estimate variables of the feature vector for each pat
 * kurtosis(): kurtosis of the frequency domain signal 
 * bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
 * angle(): Angle between to vectors
+
+###List of additional values###
+These were obtained by averaging the signals in a signal window sample. These are used on the angle() variable
+
+* gravityMean
+* tBodyAccMean
+* tBodyAccJerkMean
+* tBodyGyroMean
+* tBodyGyroJerkMean
+
+###Variable Names###
+The variable names are listed in features.txt and are made up of from the lists of values and calculations above. The names are descriptive enough, and there are so many of them, it seems most useful to use the names as they are given in the features.txt file.
+
+Example: tBodyAcc-max()-Z is the value of the maximum Body Acceleration in the time domain in the Z axis.
 
 ---
 
